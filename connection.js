@@ -13,4 +13,4 @@ const connexion = mongoose.connect(url, connectionParams).then(() => console.log
 .catch((err) => console.log('err',err));
 
 
-module.exports = connexion
+module.exports = connexion 
