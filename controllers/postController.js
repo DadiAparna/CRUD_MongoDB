@@ -1,11 +1,11 @@
 const postService = require("../services/postService");
 
 exports.createPost = async (req, res) => {
-  const { name, mail } = req.body;
+  const { mobileName, mobileCost } = req.body;
 
   try {
     ///console.log('create post')
-    await postService.createPost({ name, mail });
+    await postService.createPost({ mobileName, mobileCost });
     ///console.log('post created')
     res.json("Created Successfully");
   } catch (error) {
@@ -34,9 +34,9 @@ exports.getPostById = async (req, res) => {
 
 exports.updatePost = async (req, res) => {
   const { id } = req.params;
-  const { name, mail } = req.body;
+  const { mobileName, mobileCost } = req.body;
   try {
-    await postService.updatePost(id, { name, mail });
+    await postService.updatePost(id, { mobileName, mobileCost });
     res.json("Updated Successfully");
   } catch (error) {
     res.status(500).send(error);
